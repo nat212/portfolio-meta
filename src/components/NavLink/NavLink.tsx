@@ -8,7 +8,9 @@ interface NavLinkProps {
 export default function ({ to, children }: NavLinkProps) {
   return (
     <NavLink
-      className={({ isActive }) => `tab tab-lg ${isActive ? 'tab-active' : ''}`}
+      className={({ isActive }) =>
+        `tab tab-bordered tab-lg ${isActive ? 'tab-active' : ''}`
+      }
       to={to}>
       {children}
     </NavLink>

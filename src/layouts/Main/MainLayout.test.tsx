@@ -11,4 +11,12 @@ describe('Main Layout', () => {
     renderWithRouter(<MainLayout />)
     expect(screen.getByRole('navigation')).toBeInTheDocument()
   })
+
+  it('should render all appropriate links', () => {
+    renderWithRouter(<MainLayout />)
+    const links = ['About', 'Experience', 'Portfolio', 'Contact']
+    for (const link of links) {
+      expect(screen.getByText(link)).toBeInTheDocument()
+    }
+  })
 })
